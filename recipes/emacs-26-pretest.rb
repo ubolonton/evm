@@ -1,23 +1,23 @@
 recipe 'emacs-26-pretest' do
-  git 'http://git.savannah.gnu.org/r/emacs.git', 'emacs-26.0.90'
+  tar_xz 'https://alpha.gnu.org/gnu/emacs/pretest/emacs-26.0.91.tar.xz'
 
   osx do
     option '--with-modules'
     option '--with-ns'
     option '--without-x'
     option '--without-dbus'
+    option '--without-makeinfo'
   end
 
   linux do
     option '--with-modules'
     option '--prefix', installation_path
     option '--without-gif'
+    option '--without-makeinfo'
   end
 
   install do
-    autogen
     configure
-    make 'bootstrap'
     make 'install'
 
     osx do
