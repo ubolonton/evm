@@ -104,7 +104,7 @@ $ export PATH="$HOME/.evm/bin:$PATH"
 In the Evm `bin` directory, there are a few commands:
 
 * `evm` - Manage Emacs packages
-* `emacs/evm-emacs` - Emacs shim with currently selected Emacs package
+* `emacs`/`evm-emacs` - Emacs shim with currently selected Emacs package
 
 ### list
 
@@ -243,7 +243,7 @@ If you want to contribute a Travis binary, these instructions will help.
     ```bash
     docker$ cd emacs-$VERSION
     docker$ ./autogen.sh # for snapshot
-    docker$ ./configure --without-all --prefix=/tmp/emacs-$VERSION-travis
+    docker$ ./configure --with-x-toolkit=no --without-x --without-all --with-gnutls --prefix=/tmp/emacs-$VERSION-travis
     docker$ make bootstrap
     docker$ make install
     ```

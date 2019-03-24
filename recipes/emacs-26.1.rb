@@ -1,5 +1,5 @@
-recipe 'emacs-26-pretest' do
-  tar_xz 'https://alpha.gnu.org/gnu/emacs/pretest/emacs-26.0.91.tar.xz'
+recipe 'emacs-26.1' do
+  tar_gz 'http://ftpmirror.gnu.org/emacs/emacs-26.1.tar.gz'
 
   osx do
     option '--with-modules'
