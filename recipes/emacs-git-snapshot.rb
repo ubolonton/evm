@@ -1,5 +1,5 @@
 recipe 'emacs-git-snapshot' do
-  git 'http://git.savannah.gnu.org/r/emacs.git'
+  git 'https://git.savannah.gnu.org/r/emacs.git'
 
   osx do
     option '--with-modules'
