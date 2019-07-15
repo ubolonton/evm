@@ -11,12 +11,24 @@ before_install:
   - bin/evm config path /tmp
   - bin/evm install $EVM_EMACS
   - bin/evm use $EVM_EMACS
+  - gem install bundler --version '< 2'
 script:
   - bundle exec rspec spec
   - bin/emacs --version
-  - bin/emacs -Q --batch --eval '(unless (string= (getenv "EVM_EMACS") (format "emacs-%d.%d-travis" emacs-major-version emacs-minor-version)) (kill-emacs 1))'
+  - bin/emacs -Q --batch --eval
+        '(unless (or (string= (getenv "EVM_EMACS")
+                              (format "emacs-%d.%d-travis"
+                                      emacs-major-version
+                                      emacs-minor-version))
+                     (and (string= (getenv "EVM_EMACS") "emacs-git-snapshot-travis")
+                          (= emacs-major-version 27)))
+                 (kill-emacs 1))'
 rvm:
-  - 1.9.3
+  - 2.3.8
+  - 2.4.6
+  - 2.5.5
+  - 2.6.3
+  - ruby-head
 env:
   - EVM_EMACS=emacs-24.1-travis
   - EVM_EMACS=emacs-24.2-travis
@@ -26,3 +38,6 @@ env:
   - EVM_EMACS=emacs-25.1-travis
   - EVM_EMACS=emacs-25.2-travis
   - EVM_EMACS=emacs-25.3-travis
+  - EVM_EMACS=emacs-26.1-travis
+  - EVM_EMACS=emacs-26.2-travis
+  - EVM_EMACS=emacs-git-snapshot-travis
