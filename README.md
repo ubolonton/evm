@@ -31,14 +31,14 @@ information on how to use EVM on Travis.
   your platform and with your Emacs version. But what about all other
   versions that people are using? Does your package work for them?
 
-* EVM provides pre compiled binaries to allow for quick installation
+* EVM provides Linux pre-compiled binaries to allow for quick installation
   on CI systems.
 
 ## Platform Support
 
 ### OSX
 
-Supported!
+Supported! (currently no pre-compiled binaries for CI)
 
 ### GNU/Linux
 
@@ -225,9 +225,9 @@ If you want to contribute a Travis binary, these instructions will help.
 2. Run the generate script:
 
 ```bash
-$ docker/build-release.sh 26.0.91
-$ ls emacs-26.0.91-travis.tar.gz
-emacs-26.0.91-travis.tar.gz
+$ docker/build-release.sh 27.1 linux-xenial
+$ ls emacs-27.1-travis-linux-xenial.tar.gz
+emacs-27.1-travis-linux-xenial.tar.gz
 ```
 
 Caution: Be prepared to wait!
