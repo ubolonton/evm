@@ -1,15 +1,19 @@
 recipe 'emacs-27.1' do
-  tar_gz 'http://ftpmirror.gnu.org/emacs/emacs-27.1.tar.gz'
+  tar_gz 'https://ftpmirror.gnu.org/emacs/emacs-27.1.tar.gz'
 
   osx do
+    option '--with-modules'
     option '--with-ns'
     option '--without-x'
     option '--without-dbus'
+    option '--without-makeinfo'
   end
 
   linux do
+    option '--without-makeinfo'
     option '--prefix', installation_path
     option '--without-gif'
+    option '--without-makeinfo'
   end
 
   install do
