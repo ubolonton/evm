@@ -1,5 +1,5 @@
 recipe 'emacs-25.2' do
-  tar_xz 'https://ftpmirror.gnu.org/emacs/emacs-25.2.tar.gz'
+  tar_xz 'http://ftpmirror.gnu.org/emacs/emacs-25.2.tar.gz'
 
   osx do
     option '--with-modules'
